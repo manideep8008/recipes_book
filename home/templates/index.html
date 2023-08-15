@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block start %}
+    <h1>Hey welcome to html in django</h1>
+    <!-- {{peoples}} -->
+    <a href='/contact/' class="link">contact</a>
+    <a href="/about/"class="link">about</a>
+
+    <!-- <table class="container">
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>vote status</th>
+        </tr>
+        {% for i in peoples %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>
+                {% if i.age >= 18 %}
+                👍
+                {% else %}       
+                👎 
+                {% endif %}            
+            </td>
+          </tr>
+        {%endfor%}
+      </table> -->
+    
+{% endblock %}

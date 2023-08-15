@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block start %}
+
+
+<div class="container mt-5">
+    <h1 class="col-6 mx-auto">Update Receipes</h1>
+   <br>
+    <form class="col-6 mx-auto p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Receipe Name</label>
+          <input name="receipe_name" value="{{receipe.receipe_name}}" type="text" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label" >Description</label>
+          <textarea name="receipe_desc" class="form-control">{{receipe.receipe_desc}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Receipe Image</label>
+            <input name="receipe_image" type="file" class="form-control" >
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+<br>
+<br><br>
+     <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">receipe_name</th>
+            <th scope="col">receipe_desc</th>
+            <th scope="col">receipe_image</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for rec in receipes %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{rec.receipe_name}}</td>
+            <td>{{rec.receipe_desc}}</td>
+            <td>
+                <img src="/media/{{rec.receipe_image}}" style="height: 200px;"
+            </td>
+            <td><a href="/delete_recepies/{{rec.id}}" class="btn btn-danger">Delete</a></td>
+          </tr>
+          
+        </tbody>
+        {%endfor%}
+      </table> -->
+
+</div>
+
+{% endblock %}
